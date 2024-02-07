@@ -13,3 +13,47 @@ body {
   margin: 0;
   padding: 0;
 }
+
+
+.slider {
+  position: relative;
+}
+.swiper {
+  position: unset;
+  width: 85%;
+}
+
+.swiper-button-next {
+  background-image: url('./assets/right-arrow.png');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+  width: 65px;
+  height: 65px;
+  margin-left: 60px;
+}
+.swiper-button-prev {
+  background-image: url('./assets/left-arrow.png');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+  width: 65px;
+  height: 65px;
+  margin-right: 60px;
+}
+
+.swiper-button-next::after {
+  display: none;
+}
+.swiper-button-prev::after {
+  display: none;
+}
+
+
+@media (max-width: 768px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 40px; 
+    height: 40px;
+  }
+}
