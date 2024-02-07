@@ -4,7 +4,7 @@ import { common } from "@mui/material/colors";
 import { Button } from "../../components";
 
 const boxStyle: SxProps = {
-  height: "100vh",
+  height: "750px",
   background: "linear-gradient(to bottom, #34A6B1 0%, #1F96C0 100%)",
   color: common.white,
   pt: "90px",
