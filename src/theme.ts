@@ -171,6 +171,17 @@ export const theme = createTheme({
   },
 
   palette: {
+    neutral: {
+      100: "#FFFFFF",
+      200: "#E5E7EB",
+      300: "#D1D5DB",
+      400: "#9CA3AF",
+      500: "#6B7280",
+      600: "#4B5563",
+      700: "#374151",
+      800: "#1F2937",
+      900: "#111827",
+    },
     action: {
       active: "#6B7280",
       focus: "rgba(55, 65, 81, 0.12)",
@@ -224,6 +235,10 @@ export const theme = createTheme({
       primary: "#111827",
       secondary: "#687588",
       disabled: "#899DB7",
+    },
+    common: {
+      black: "#000000",
+      white: "#FFFFFF",
     },
   },
   shape: {
