@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <>
       <HeroSection />
-      <KeyFeatures />
+      <KeyFeatures id="features" />
     </>
   );
 };

@@ -1,5 +1,5 @@
 export const textLinks = [
-    { title: "Features", id: "#" },
+    { title: "Features", id: "features" },
     { title: "How it works", id: "#" },
     { title: "Pricing", id: "#" },
     { title: "FAQ", id: "#" },

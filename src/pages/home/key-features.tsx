@@ -4,9 +4,9 @@ import { SwiperSlide } from "swiper/react";
 import { FeatureCard, Slider } from "../../components";
 import { featureData } from "../../mocks/home";
 
-const KeyFeatures = () => {
+const KeyFeatures = ({ id }: { id: string }) => {
   return (
-    <Box>
+    <Box id={id}>
       <Container maxWidth="lg">
         <Box my={10}>
           <Typography textAlign={"center"} variant="h2">
