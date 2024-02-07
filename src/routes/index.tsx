@@ -1,8 +1,7 @@
 import { ReactNode } from "react";
 import { useRoutes } from "react-router-dom";
-import Home from "../pages/home";
-import About from "../pages/about";
 import Layout from "../layout";
+import { ContactUs, Home } from "../pages";
 
 export default function Routes(): ReactNode {
   return useRoutes([
@@ -11,7 +10,7 @@ export default function Routes(): ReactNode {
       element: <Layout />,
       children: [
         { path: "/", element: <Home /> },
-        { path: "/about", element: <About /> },
+        { path: "/contact-us", element: <ContactUs /> },
       ],
     },
   ]);
