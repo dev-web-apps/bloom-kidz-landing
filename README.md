@@ -1,30 +1,61 @@
-# React + TypeScript + Vite
+<div align="center">
+<img src="./src/assets/kidzbloom.png" width=120 height=80/>
+<h1> BLOOM KIDZ</h1>  
+</div>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+# Documentation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1- [FIGMA](https://www.figma.com/file/TcW2XCgxHkH3PKxfcqJOb8/BloomKidz?type=design&node-id=237-175703&mode=design&t=RmNSLvLazyMS6gxf-0](https://www.figma.com/file/dbPB9V8QAD6SbabBMNXtif/BloomKidz---Landing-Page?type=design&node-id=1-880&mode=design&t=VbQDHBTEfbCzIumW-0)
 
-## Expanding the ESLint configuration
+2- [FIGMA-PROTOTYPE](https://www.figma.com/proto/TcW2XCgxHkH3PKxfcqJOb8/BloomKidz?type=design&node-id=237-175703&t=RmNSLvLazyMS6gxf-0&scaling=scale-down&page-id=131%3A136908&starting-point-node-id=237%3A175703)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Tech Stack
 
-- Configure the top-level `parserOptions` property like this:
+**Admin:** React, MUI
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## Node Version
+
+**18.16.1**
+
+## Run Locally
+
+Firebase deployed url
+
+```bash
+  https://kidz-loom.web.app
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Clone the project
+
+```bash
+  git clone https://github.com/dev-web-apps/kidz-bloom-web.git
+```
+
+Go to the project directory
+
+```bash
+  cd kidz-bloom-web
+```
+
+Install dependencies
+
+```bash
+npm i
+```
+
+Run development server
+
+```bash
+npm run dev
+```
+
+Create production build
+
+```bash
+npm run build
+```
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
