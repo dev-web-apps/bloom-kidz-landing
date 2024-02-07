@@ -1,13 +1,5 @@
-import React from "react";
 import { Button as MuiButton } from "@mui/material";
-import { ButtonProps } from "@mui/material/Button";
 import CircularProgress from "@mui/material/CircularProgress";
-
-interface IButton extends ButtonProps {
-  isLoading?: boolean;
-  loadcolor?: string;
-  children: React.ReactNode;
-}
 
 export default function Button({
   children,
