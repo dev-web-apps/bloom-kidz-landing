@@ -8,8 +8,6 @@
 
 1- [FIGMA](https://www.figma.com/file/dbPB9V8QAD6SbabBMNXtif/BloomKidz---Landing-Page?type=design&node-id=1-880&mode=design&t=VbQDHBTEfbCzIumW-0)
 
-2- [FIGMA-PROTOTYPE](https://www.figma.com/proto/TcW2XCgxHkH3PKxfcqJOb8/BloomKidz?type=design&node-id=237-175703&t=RmNSLvLazyMS6gxf-0&scaling=scale-down&page-id=131%3A136908&starting-point-node-id=237%3A175703)
-
 ## Tech Stack
 
 **Admin:** React, MUI
@@ -18,18 +16,11 @@
 
 **18.16.1**
 
-## Run Locally
-
-Firebase deployed url
-
-```bash
-  https://kidz-loom.web.app
-```
 
 Clone the project
 
 ```bash
-  git clone https://github.com/dev-web-apps/kidz-bloom-web.git
+  git clone https://github.com/dev-web-apps/bloom-kidz-landing.git
 ```
 
 Go to the project directory
