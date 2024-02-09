@@ -91,9 +91,14 @@ const Hamburger = ({
                   sx={{ color: "white", fontWeight: "500" }}
                   key={item.title}
                   onClick={() => {
-                    item.url
-                      ? navigate(item.url)
-                      : scrollToSection(item.id as string);
+                    if (item.url) {
+                      navigate(item.url);
+                    } else if (item.id) {
+                      navigate("/");
+                      setTimeout(() => {
+                        scrollToSection(item.id);
+                      }, 100);
+                    }
                   }}
                 >
                   {item.title}

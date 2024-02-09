@@ -84,9 +84,14 @@ export default function Footer() {
                               sx={buttonStyle}
                               key={text.title}
                               onClick={() => {
-                                text.url
-                                  ? navigate(text.url)
-                                  : scrollToSection(text?.id as string);
+                                if (text.url) {
+                                  navigate(text.url);
+                                } else if (text.id) {
+                                  navigate("/");
+                                  setTimeout(() => {
+                                    scrollToSection(text.id);
+                                  }, 100);
+                                }
                               }}
                               disableRipple
                             >
