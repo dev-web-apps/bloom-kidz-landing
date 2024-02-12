@@ -54,12 +54,12 @@ export default function Footer() {
   const navigate = useNavigate();
 
   return (
-    <Box bgcolor={"#FFFFFF"}>
+    <Box bgcolor={"common.white"}>
       <Container>
         <Box sx={wrapper}>
           <>
             <Grid container m={2} spacing={{ xs: 1, sm: 3, md: 6 }} mb={8}>
-              <Grid item xs={4} sx={firstGrid}>
+              <Grid item xs={12} sm={6} md={4} sx={firstGrid}>
                 <Box>
                   <img alt="logo" src={Logo} height={72} width={170} />
                 </Box>
@@ -71,7 +71,7 @@ export default function Footer() {
               </Grid>
               {footerRoutes?.map((route) => {
                 return (
-                  <Grid item xs={2} key={route.title} mt={2}>
+                  <Grid item xs={6} sm={3} md={2} key={route.title} mt={2}>
                     <Box>
                       <Typography mb={"10px"} variant="h6">
                         {route.title}
@@ -104,7 +104,7 @@ export default function Footer() {
                   </Grid>
                 );
               })}
-              <Grid item xs={4} mt={2}>
+              <Grid item xs={12} sm={12} md={4} mt={2}>
                 <Stack>
                   <Box mb={4}>
                     <Typography fontWeight={700} mb={"8px"} variant="h6">
