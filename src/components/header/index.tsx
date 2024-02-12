@@ -13,11 +13,12 @@ import Logo from "../../assets/kidzbloom.png";
 import { useNavigate } from "react-router-dom";
 import { textLinks } from "../../utils/constant";
 import Hamburger from "./hamburger";
+import { scrollToSection } from "../../utils/helpers";
 
 const wrapper = (isScrolled: boolean): SxProps => {
   return {
     background: isScrolled ? "#34a6b1" : "rgba(0, 0, 0, 0.0)",
-    transition:'background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+    transition: "background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
     height: "90px",
     display: "flex",
     alignItems: "center",
@@ -59,13 +60,6 @@ export default function Header() {
 
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
-  };
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
   };
 
   useEffect(() => {
@@ -112,9 +106,14 @@ export default function Header() {
                     sx={{ color: "#ffffff", fontWeight: 400 }}
                     key={text.title}
                     onClick={() => {
-                      text.url
-                        ? navigate(text.url)
-                        : scrollToSection(text?.id as string);
+                      if (text.url) {
+                        navigate(text.url);
+                      } else if (text.id) {
+                        navigate("/");
+                        setTimeout(() => {
+                          scrollToSection(text.id);
+                        }, 100); 
+                      }
                     }}
                   >
                     {text.title}
