@@ -4,7 +4,7 @@ import { common } from "@mui/material/colors";
 import { Button } from "../../components";
 
 const boxStyle: SxProps = {
-  height: "750px",
+  height:{xs:'100%', md:"750px"},
   background: "linear-gradient(to bottom, #34A6B1 0%, #1F96C0 100%)",
   color: common.white,
   pt: "90px",
@@ -32,6 +32,7 @@ const imgBox: SxProps = {
   justifySelf: "flex-end",
   display: "flex",
   width: { xs: "80%", sm: "90%", md: "100%" },
+  
 };
 
 const HeroSection = () => {
