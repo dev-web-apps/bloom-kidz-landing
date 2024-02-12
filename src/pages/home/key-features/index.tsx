@@ -13,7 +13,7 @@ import { featureMock } from "../../../mocks/home";
 const mainContainer: SxProps = {
   borderRadius: "24px",
   backgroundColor: "#F8F8F8",
-  p: { xs: 3, md: 6 },
+  p: { xs: 1,sm:3, md: 6 },
   px: 8,
   mb: 6,
 };
@@ -25,7 +25,7 @@ const firstBox: SxProps = {
   width: "100%",
   pt: 2,
   gap: "35px",
-  mb: 6,
+  mb: { xs: 1,sm:3, md: 6 },
   position: "relative",
 };
 
@@ -39,7 +39,7 @@ const textStyle: SxProps = {
 
 const mainText: SxProps = {
   fontSize: { xs: 25, sm: 35, md: 45 },
-  lineHeight: "55px",
+  lineHeight:{xs:'35px',sm:'45px', md:"55px"},
   fontWeight: "600",
 };
 const subText: SxProps = {

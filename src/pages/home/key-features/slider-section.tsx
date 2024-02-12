@@ -9,7 +9,11 @@ const SliderSection = () => {
       <Typography textAlign={"center"} variant="h2">
         Key Features
       </Typography>
-      <Box p={2} py={10} alignSelf={"center"}>
+      <Box
+        p={2}
+        sx={{ pt: 10, pb: { sx: 1, sm: 6, md: 10 } }}
+        alignSelf={"center"}
+      >
         <Slider>
           {featureData.map((data, index) => (
             <SwiperSlide key={index}>
