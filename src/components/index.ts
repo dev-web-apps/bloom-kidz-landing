@@ -8,6 +8,8 @@ import ReviewCard from "./reviewCard";
 import PackageCard from "./package-card";
 import TextInput from "./textfield";
 import Socials from "./socials";
+import FAQ from "./faq";
+import ContactUsForm from "./conatact-us-form";
 
 export {
   Button,
@@ -19,5 +21,7 @@ export {
   VideoPlayer,
   ReviewCard,
   TextInput,
-  Socials
+  Socials,
+  FAQ,
+  ContactUsForm
 };
