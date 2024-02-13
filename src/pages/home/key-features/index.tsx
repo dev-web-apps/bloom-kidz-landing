@@ -13,7 +13,7 @@ import { featureMock } from "../../../mocks/home";
 const mainContainer: SxProps = {
   borderRadius: "24px",
   backgroundColor: "#F8F8F8",
-  p: { xs: 1,sm:3, md: 6 },
+  p: { xs: 1,sm:3, md: 7 },
   px: 8,
   mb: 6,
 };
@@ -76,11 +76,11 @@ const propstyle2: SxProps = {
 
 const propstyle3: SxProps = {
   position: "absolute",
-  top: "-45px",
-  right: "-70px",
+  top: "-35px",
+  right: "-60px",
   opacity: { xs: "0", lg: "1" },
   img: {
-    width: { xs: "0px !important", lg: "80px !important" },
+    width: { xs: "0px !important", lg: "70px !important" },
   },
 };
 const propstyle4: SxProps = {
