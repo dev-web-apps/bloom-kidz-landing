@@ -45,8 +45,8 @@ const HowItWorks = () => {
     setIsPlying(!isPlaying);
   };
   return (
-    <Container maxWidth="lg">
-      <Box my={10}>
+    <Container maxWidth="lg" >
+      <Box my={10} id='how-it-works'>
         <Typography textAlign={"center"} variant="h2" mb={5}>
           How it works?
         </Typography>
