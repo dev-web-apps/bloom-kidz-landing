@@ -1,11 +1,9 @@
+import FAQSection from "./faq";
+
 const ContactUs = () => {
   return (
     <>
-      <h1>About</h1>
-      <h1>About</h1>
-      <h1>About</h1>
-      <h1>About</h1>
-      <h1>About</h1>
+      <FAQSection/>
     </>
   );
 };
