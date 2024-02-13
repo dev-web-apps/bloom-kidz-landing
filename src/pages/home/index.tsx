@@ -3,6 +3,7 @@ import HowItWorks from "./how-it-works";
 import KeyFeatures from "./key-features";
 import Packages from "./packages";
 import Demo from "./demo";
+import HomeFAQ from "./faq-section";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <KeyFeatures id="features" />
       <HowItWorks />
       <Packages />
+      <HomeFAQ/>
       <Demo />
     </>
   );
