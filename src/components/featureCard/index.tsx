@@ -12,7 +12,7 @@ const FeatureCard = ({ icon, heading, subText }: IFeatureCard) => {
       sx={{
         p: 3,
         borderRadius: "8px",
-        boxShadow: "0px 12px 16px 0px rgba(0, 0, 0, 0.02)",
+        boxShadow: "0px 12px 16px 0px rgba(0, 0, 0, 0.04)",
         display: "flex",
         flexDirection: "column",
         minHeight:{xs:'220px',sm:'260px',md:'280px',lg:'260px'}
