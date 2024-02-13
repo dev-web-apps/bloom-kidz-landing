@@ -4,7 +4,7 @@ export const textLinks = [
   { title: "Features", id: "features" },
   { title: "How it works", id: "how-it-works" },
   { title: "Pricing", id: "pricing" },
-  { title: "FAQ", id: "#" },
+  { title: "FAQ", id: "faq" },
   { title: "Contact Us", url: "/contact-us" },
 ];
 
