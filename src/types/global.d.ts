@@ -15,6 +15,13 @@ declare global {
     loadcolor?: string;
     children: React.ReactNode;
   }
+
+  interface IVideoPlayer {
+    src: string;
+    poster?: string;
+    loop?: boolean;
+    autoplay?: boolean | undefined;
+  }
 }
 
 declare module "@mui/material/styles/createPalette" {

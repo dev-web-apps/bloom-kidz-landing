@@ -1,4 +1,5 @@
 import HeroSection from "./hero-section";
+import HowItWorks from "./how-it-works";
 import KeyFeatures from "./key-features";
 
 const Home = () => {
@@ -6,6 +7,7 @@ const Home = () => {
     <>
       <HeroSection />
       <KeyFeatures id="features" />
+      <HowItWorks />
     </>
   );
 };
