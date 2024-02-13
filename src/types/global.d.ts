@@ -29,6 +29,14 @@ declare global {
     dark?: boolean;
     yearly?: boolean;
   }
+
+  interface IDemo {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phoneNo: string;
+    message: string;
+  }
 }
 
 declare module "@mui/material/styles/createPalette" {

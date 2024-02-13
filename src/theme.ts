@@ -12,6 +12,7 @@ export const theme = createTheme({
     },
   },
   components: {
+    
     MuiButton: {
       defaultProps: {
         disableElevation: true,
@@ -107,21 +108,18 @@ export const theme = createTheme({
     },
     MuiOutlinedInput: {
       styleOverrides: {
-        input: {
-          "&::placeholder": {
-            color: "#899DB7",
-          },
-        },
         root: {
+          backgroundColor: "#FFFFFF", 
           fontSize: "14px",
           fontWeight: 500,
           color: "#111827",
           lineHeight: "160%",
           paddingLeft: "6px",
+        
         },
         notchedOutline: {
           borderColor: "#E9EAEC",
-          borderRadius: "10px",
+          borderRadius: "6px",
         },
       },
     },
