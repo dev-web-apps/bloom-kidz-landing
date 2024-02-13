@@ -8,24 +8,22 @@ import {
   Button,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Logo from "../../assets/kidzbloom.png";
 import { useNavigate } from "react-router-dom";
 import { textLinks } from "../../utils/constant";
 import Hamburger from "./hamburger";
 import { scrollToSection } from "../../utils/helpers";
 
-const wrapper = (isScrolled: boolean): SxProps => {
-  return {
-    background: isScrolled ? "#34a6b1" : "rgba(0, 0, 0, 0.0)",
-    transition: "background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
-    height: "90px",
-    display: "flex",
-    alignItems: "center",
-    zIndex: 1000,
-    position: "fixed",
-    width: "100%",
-  };
+const wrapper: SxProps = {
+  background: "#34a6b1",
+  transition: "background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
+  height: "90px",
+  display: "flex",
+  alignItems: "center",
+  zIndex: 1000,
+  position: "fixed",
+  width: "100%",
 };
 
 const navbarWrap: SxProps = {
@@ -54,7 +52,6 @@ const drawerBtn: SxProps = {
 };
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -62,24 +59,9 @@ export default function Header() {
     setIsDrawerOpen(!isDrawerOpen);
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      if (scrollPosition > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <>
-      <Box sx={wrapper(isScrolled)}>
+      <Box sx={wrapper}>
         <Container>
           <Stack
             direction={"row"}
@@ -112,7 +94,7 @@ export default function Header() {
                         navigate("/");
                         setTimeout(() => {
                           scrollToSection(text.id);
-                        }, 100); 
+                        }, 100);
                       }
                     }}
                   >
