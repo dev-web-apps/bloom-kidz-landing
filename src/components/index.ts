@@ -10,6 +10,7 @@ import TextInput from "./textfield";
 import Socials from "./socials";
 import FAQ from "./faq";
 import ContactUsForm from "./conatact-us-form";
+import ScrollToTop from "./scroll-to-top"
 
 export {
   Button,
@@ -23,5 +24,6 @@ export {
   TextInput,
   Socials,
   FAQ,
-  ContactUsForm
+  ContactUsForm,
+  ScrollToTop
 };
