@@ -1,9 +1,15 @@
-import { Add,} from "@mui/icons-material";
+import { Add, Remove,} from "@mui/icons-material";
 import { Accordion, AccordionDetails, AccordionSummary, Box, Container, Typography } from "@mui/material";
 import { Accordiondata } from "../../mocks/contact us";
+import { useState } from "react";
 
 
 const FAQSection = () => {
+  const [expanded, setExpanded] = useState<number | null>(null);
+
+  const handleChange = (index: number) => (_event: React.ChangeEvent<{}>, isExpanded: boolean) => {
+    setExpanded(isExpanded ? index : null);
+  };
   return (
     <Container maxWidth="lg">
         <Box pb="10%">
@@ -23,17 +29,18 @@ const FAQSection = () => {
 
       </Box>
       <Box width="70%" marginLeft="15%" >
-       {Accordiondata.map((item) => (
-        <Accordion key={item.id} sx={{backgroundColor:"#F8F8F8"}}>
+
+       {Accordiondata.map((item, index) => (
+        <Accordion key={index} sx={{ backgroundColor: "#F8F8F8" }} expanded={expanded === index} onChange={handleChange(index)}>
           <AccordionSummary
-            expandIcon={<Add/>}
-            aria-controls={`panel${item.id}-content`}
-            id={`panel${item.id}-header`}
+            expandIcon={expanded === index ? <Remove /> : <Add />}
+            aria-controls={`panel${index}-content`}
+            id={`panel${index}-header`}
           >
-            <Typography fontWeight="400" fontSize="18px" lineHeight="30px">{item.heading}</Typography>
+            <Typography fontWeight="600" fontSize="22px" lineHeight="34px">{item.heading}</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>{item.subheading}</Typography>
+            <Typography fontWeight="400" fontSize="18px" lineHeight="30px">{item.subheading}</Typography>
           </AccordionDetails>
         </Accordion>
       ))}
