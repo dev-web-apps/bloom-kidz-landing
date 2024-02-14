@@ -188,7 +188,7 @@ export const theme = createTheme({
           color: "#111827",
           lineHeight: "160%",
           paddingLeft: "6px",
-          padding:0
+          padding: 0,
         },
         icon: {
           color: "#111827",
