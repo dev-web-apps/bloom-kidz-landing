@@ -1,10 +1,10 @@
-import Banner from "./banner";
+import TrailForm from "./banner";
 import TrialFAQ from "./faq";
 
 const FreeTrial = () => {
   return (
     <>
-      <Banner />
+      <TrailForm />
       <TrialFAQ />
     </>
   );

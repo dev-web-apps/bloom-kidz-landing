@@ -50,7 +50,7 @@ const initialState: ISignUp = {
   subscriptionType: "",
 };
 
-const Banner = () => {
+const TrailForm = () => {
   const [form, setForm] = useState<ISignUp>(initialState);
   return (
     <Box sx={wrapper}>
@@ -202,16 +202,6 @@ const Banner = () => {
                       Nursery Package - £850/year
                     </MenuItem>
                   </GroupedSelect>
-                  {/* <TextInput
-                    label="Subscription Type"
-                    whiteLabel
-                    type="text"
-                    placeholder="Please Select"
-                    value={form.subscriptionType}
-                    handleChangeValue={(val: string) =>
-                      setForm({ ...form, subscriptionType: val })
-                    }
-                  /> */}
                 </Grid>
                 <Grid item xs={12} mt={2}>
                   <Button variant="contained" sx={{ width: "170px" }}>
@@ -227,4 +217,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default TrailForm;
