@@ -27,3 +27,13 @@ export const footerRoutes = [
     ],
   },
 ];
+
+export const subscriptionTypeOptions = [
+  { value: "Director/Owner", label: "Director/Owner" },
+  { value: "Manager", label: "Manager" },
+  { value: "Administrator", label: "Administrator" },
+  { value: "Practitioner", label: "Practitioner" },
+  { value: "Childminder", label: "Childminder" },
+  { value: "Parent", label: "Parent" },
+  { value: "Other", label: "Other" },
+];

@@ -349,7 +349,7 @@ export const theme = createTheme({
     h2: {
       fontWeight: 700,
       lineHeight: "130%",
-      ...responsiveFontSizes({ xs: 26, sm: 35, md: 40, lg: 48 }),
+      ...responsiveFontSizes({ xs: 30, sm: 35, md: 40, lg: 48 }),
     },
     h3: {
       fontWeight: 700,

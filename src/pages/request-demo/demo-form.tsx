@@ -11,6 +11,7 @@ import {
 import bgImage from "../../assets/packages-bg.png";
 import { Button, GroupedSelect, Socials, TextInput } from "../../components";
 import { useState } from "react";
+import { subscriptionTypeOptions } from "../../utils/constant";
 
 const wrapper: SxProps = {
   position: "relative",
@@ -151,28 +152,15 @@ const DemoForm = () => {
                       })
                     }
                   >
-                    <MenuItem value={1} sx={{ fontWeight: "600" }}>
-                      Director/Owner
-                    </MenuItem>
-                    <MenuItem value={2} sx={{ fontWeight: "600" }}>
-                      Manager
-                    </MenuItem>
-                    <MenuItem value={3} sx={{ fontWeight: "600" }}>
-                      Administrator
-                    </MenuItem>
-
-                    <MenuItem value={4} sx={{ fontWeight: "600" }}>
-                      Practitioner
-                    </MenuItem>
-                    <MenuItem value={5} sx={{ fontWeight: "600" }}>
-                      Childminder
-                    </MenuItem>
-                    <MenuItem value={6} sx={{ fontWeight: "600" }}>
-                      Parent
-                    </MenuItem>
-                    <MenuItem value={6} sx={{ fontWeight: "600" }}>
-                      Other
-                    </MenuItem>
+                    {subscriptionTypeOptions.map((option, index) => (
+                      <MenuItem
+                        key={index}
+                        value={option.value}
+                        sx={{ fontWeight: "600" }}
+                      >
+                        {option.label}
+                      </MenuItem>
+                    ))}
                   </GroupedSelect>
                 </Grid>
                 <Grid item xs={12} mt={2}>
