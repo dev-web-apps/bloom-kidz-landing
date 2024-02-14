@@ -67,7 +67,7 @@ const ContactUsForm = ({
             <Box sx={mainHeading}>
               <Box width={{ xs: "100%", lg: "500px" }} textAlign={"start"}>
                 <Typography variant="h2">{heading}</Typography>
-                <Typography sx={subText} width={{ xs: "100%", lg: "270px" }}>
+                <Typography variant="subtitle2" sx={subText} width={{ xs: "100%", lg: "270px" }}>
                   {text}
                 </Typography>
               </Box>
