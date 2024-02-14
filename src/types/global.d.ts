@@ -52,6 +52,12 @@ declare global {
     phoneNo: string;
     role: string;
   }
+
+  interface IContactCard {
+    icon: string; 
+    heading: string;
+    phoneNumber: string;
+  }
 }
 
 declare module "@mui/material/styles/createPalette" {
