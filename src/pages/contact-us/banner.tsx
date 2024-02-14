@@ -13,33 +13,30 @@ const wrapper: SxProps = {
   display: "flex",
   alignItems: "center",
 };
+const headingBox: SxProps = {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  flexDirection: { xs: "column", md: "row" },
+  p: { xs: 3, sm: 4, md: 8, lg: 9 },
+  gap: "20px",
+};
+const cardContainer: SxProps = {
+  display: "flex",
+  flexDirection: { xs: "column", lg: "row" },
+  gap: "20px",
+  px: 1,
+};
 
 const Banner = () => {
   return (
     <Box sx={wrapper}>
       <Container maxWidth="lg">
-        <Box
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          flexDirection={{ xs: "column", md: "row" }}
-          p={{ xs: 3, sm: 4, md: 8, lg: 9 }}
-          gap={"20px"}
-        >
-          <Typography
-            variant="h2"
-            color="background.default"
-            fontWeight={700}
-            width={"100%"}
-          >
+        <Box sx={headingBox}>
+          <Typography variant="h2" color="background.default">
             We would love to hear from you!
           </Typography>
-          <Box
-            display="flex"
-            gap="20px"
-            flexDirection={{ xs: "column", lg: "row" }}
-            px={1}
-          >
+          <Box sx={cardContainer}>
             <ContactCard
               icon={phoneIcon}
               heading="Call us"
