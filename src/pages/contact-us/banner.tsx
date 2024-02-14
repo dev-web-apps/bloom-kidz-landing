@@ -12,6 +12,7 @@ const wrapper: SxProps = {
   backgroundPosition: "center",
   display: "flex",
   alignItems: "center",
+  pt: 8,
 };
 const headingBox: SxProps = {
   display: "flex",
@@ -37,16 +38,32 @@ const Banner = () => {
             We would love to hear from you!
           </Typography>
           <Box sx={cardContainer}>
-            <ContactCard
-              icon={phoneIcon}
-              heading="Call us"
-              phoneNumber="(123) 431 3456"
-            />
-            <ContactCard
-              icon={emailIcon}
-              heading="Email us"
-              phoneNumber="hello@bloomkidz.com"
-            />
+            <Box
+              onClick={(e) => {
+                window.location.href = "tel:(123) 431 3456";
+                e.preventDefault();
+              }}
+              sx={{ cursor: "pointer" }}
+            >
+              <ContactCard
+                icon={phoneIcon}
+                heading="Call us"
+                subtext="(123) 431 3456"
+              />
+            </Box>
+            <Box
+              onClick={(e) => {
+                window.location.href = "mailto:hello@bloomkidz.com";
+                e.preventDefault();
+              }}
+              sx={{ cursor: "pointer" }}
+            >
+              <ContactCard
+                icon={emailIcon}
+                heading="Email us"
+                subtext="hello@bloomkidz.com"
+              />
+            </Box>
           </Box>
         </Box>
       </Container>
