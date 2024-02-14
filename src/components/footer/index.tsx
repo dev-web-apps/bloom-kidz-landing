@@ -45,9 +45,21 @@ const buttonStyle: SxProps = {
 };
 
 const socials = [
-  { icon: <AiFillFacebook color="#000" />, size: "20px",url: "https://www.facebook.com"},
-  { icon: <BsTwitter color="#000" />, size: "20px",url:"https://www.twitter.com" },
-  { icon: <AiFillLinkedin color="#000" />, size: "20px",url:"https://www.linkedin.com" },
+  {
+    icon: <AiFillFacebook color="#000" />,
+    size: "20px",
+    url: "https://www.facebook.com",
+  },
+  {
+    icon: <BsTwitter color="#000" />,
+    size: "20px",
+    url: "https://www.twitter.com",
+  },
+  {
+    icon: <AiFillLinkedin color="#000" />,
+    size: "20px",
+    url: "https://www.linkedin.com",
+  },
 ];
 
 export default function Footer() {
@@ -118,7 +130,7 @@ export default function Footer() {
                     <Button
                       variant="contained"
                       onClick={() => {
-                        navigate('/free-trial');
+                        navigate("/free-trial");
                       }}
                     >
                       Start Free Trial

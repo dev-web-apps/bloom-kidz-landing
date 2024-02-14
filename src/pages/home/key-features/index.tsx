@@ -25,7 +25,7 @@ const firstBox: SxProps = {
   flexDirection: { xs: "column-reverse", md: "row" },
   width: "100%",
   pt: 2,
-  gap: "35px",
+  gap: "45px",
   mb: { xs: 1, sm: 3, md: 6 },
   position: "relative",
 };
@@ -134,7 +134,7 @@ const KeyFeatures = ({ id }: { id: string }) => {
             <Box sx={textStyle}>
               <Typography sx={mainText}>{featureMock.Heading1}</Typography>
               <Typography sx={subText}>{featureMock.SubText1}</Typography>
-              <Box>
+              <Box mt={1}>
                 <Button variant="contained" onClick={()=> navigate('/request-demo')}>Request Demo</Button>
               </Box>
             </Box>
@@ -182,7 +182,7 @@ const KeyFeatures = ({ id }: { id: string }) => {
                   </Box>
                 ))}
               </Stack>
-              <Box>
+              <Box mt={1}>
                 <Button
                   variant="contained"
                   onClick={() => {
