@@ -65,9 +65,11 @@ const ContactUsForm = ({
             justifyContent="space-evenly"
           >
             <Box sx={mainHeading}>
-              <Box width={{xs:'100%',lg:"500px"}} textAlign={'start'}>
+              <Box width={{ xs: "100%", lg: "500px" }} textAlign={"start"}>
                 <Typography variant="h2">{heading}</Typography>
-                <Typography sx={subText} width={{xs:'100%',lg:"270px"}}>{text}</Typography>
+                <Typography sx={subText} width={{ xs: "100%", lg: "270px" }}>
+                  {text}
+                </Typography>
               </Box>
               <Box sx={propimg}>
                 <img src={Prop} alt="" />
@@ -84,7 +86,7 @@ const ContactUsForm = ({
               <TextInput
                 label="First Name"
                 type="text"
-                placeholder="Input first name"
+                placeholder="Your first name"
                 value={form.firstName}
                 handleChangeValue={(val: string) =>
                   setForm({ ...form, firstName: val })
@@ -93,7 +95,7 @@ const ContactUsForm = ({
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextInput
-                label="First Name"
+                label="Last Name"
                 type="text"
                 placeholder="Your Last Name"
                 value={form.lastName}

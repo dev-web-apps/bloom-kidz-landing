@@ -15,6 +15,7 @@ type TInputProps = {
   required?: boolean;
   acceptDecimal?: boolean;
   AddClockIcon?: boolean;
+  whiteLabel?: boolean;
   type: string;
   handleChangeValue: (val: string) => void;
   value: string | number | null;
@@ -22,7 +23,7 @@ type TInputProps = {
 } & TextFieldProps;
 
 export default function TextInput(props: TInputProps): ReactNode {
-  const { label, type, required, handleChangeValue, value, ...rest } = props;
+  const { label, type, required, handleChangeValue, value,whiteLabel, ...rest } = props;
 
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
@@ -47,7 +48,13 @@ export default function TextInput(props: TInputProps): ReactNode {
     <>
       {label && (
         <Typography
-          sx={{ mb: 1, display: "flex", alignItems: "center", gap: 0.5 }}
+          sx={{
+            mb: 1,
+            display: "flex",
+            alignItems: "center",
+            gap: 0.5,
+            color: whiteLabel ? "white" : "black",
+          }}
           variant="subtitle2"
         >
           {label} {required && <Typography color={"error"}>*</Typography>}
