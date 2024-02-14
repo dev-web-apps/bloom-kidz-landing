@@ -12,6 +12,7 @@ import FAQ from "./faq";
 import ContactUsForm from "./conatact-us-form";
 import ScrollToTop from "./scroll-to-top";
 import GroupedSelect from "./grouped-select";
+import ContactCard from "./contact-card";
 
 export {
   Button,
@@ -28,4 +29,5 @@ export {
   ContactUsForm,
   ScrollToTop,
   GroupedSelect,
+  ContactCard
 };
