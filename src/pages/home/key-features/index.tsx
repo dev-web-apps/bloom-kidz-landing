@@ -9,11 +9,12 @@ import Prop3 from "../../../assets/feature-prop-3.png";
 import Prop4 from "../../../assets/feature-prop-4.png";
 import Check from "../../../assets/CheckCircle.png";
 import { featureMock } from "../../../mocks/home";
+import { useNavigate } from "react-router-dom";
 
 const mainContainer: SxProps = {
   borderRadius: "24px",
   backgroundColor: "#F8F8F8",
-  p: { xs: 1,sm:3, md: 7 },
+  p: { xs: 1, sm: 3, md: 7 },
   px: 8,
   mb: 6,
 };
@@ -25,7 +26,7 @@ const firstBox: SxProps = {
   width: "100%",
   pt: 2,
   gap: "35px",
-  mb: { xs: 1,sm:3, md: 6 },
+  mb: { xs: 1, sm: 3, md: 6 },
   position: "relative",
 };
 
@@ -39,7 +40,7 @@ const textStyle: SxProps = {
 
 const mainText: SxProps = {
   fontSize: { xs: 25, sm: 35, md: 45 },
-  lineHeight:{xs:'35px',sm:'45px', md:"55px"},
+  lineHeight: { xs: "35px", sm: "45px", md: "55px" },
   fontWeight: "600",
 };
 const subText: SxProps = {
@@ -94,6 +95,8 @@ const propstyle4: SxProps = {
 };
 
 const KeyFeatures = ({ id }: { id: string }) => {
+  const navigate = useNavigate();
+
   return (
     <Box id={id}>
       <Container maxWidth="lg">
@@ -180,7 +183,14 @@ const KeyFeatures = ({ id }: { id: string }) => {
                 ))}
               </Stack>
               <Box>
-                <Button variant="contained">Start Free Trial</Button>
+                <Button
+                  variant="contained"
+                  onClick={() => {
+                    navigate("/free-trial");
+                  }}
+                >
+                  Start Free Trial
+                </Button>
               </Box>
             </Box>
             <Box sx={imgBox} position={"relative"}>

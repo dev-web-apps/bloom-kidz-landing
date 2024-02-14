@@ -10,7 +10,8 @@ import TextInput from "./textfield";
 import Socials from "./socials";
 import FAQ from "./faq";
 import ContactUsForm from "./conatact-us-form";
-import ScrollToTop from "./scroll-to-top"
+import ScrollToTop from "./scroll-to-top";
+import GroupedSelect from "./grouped-select";
 
 export {
   Button,
@@ -25,5 +26,6 @@ export {
   Socials,
   FAQ,
   ContactUsForm,
-  ScrollToTop
+  ScrollToTop,
+  GroupedSelect,
 };

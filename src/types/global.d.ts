@@ -37,6 +37,14 @@ declare global {
     phoneNo: string;
     message: string;
   }
+  interface ISignUp {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phoneNo: string;
+    nurseryName: string;
+    subscriptionType: string;
+  }
 }
 
 declare module "@mui/material/styles/createPalette" {

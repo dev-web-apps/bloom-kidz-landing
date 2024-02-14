@@ -2,9 +2,10 @@ import { Box, Container, SxProps, Typography } from "@mui/material";
 import Banner from "../../assets/home-banner.png";
 import { common } from "@mui/material/colors";
 import { Button } from "../../components";
+import { useNavigate } from "react-router-dom";
 
 const boxStyle: SxProps = {
-  height:{xs:'100%', md:"750px"},
+  height: { xs: "100%", md: "750px" },
   background: "linear-gradient(to bottom, #34A6B1 0%, #1F96C0 100%)",
   color: common.white,
   pt: "90px",
@@ -32,10 +33,10 @@ const imgBox: SxProps = {
   justifySelf: "flex-end",
   display: "flex",
   width: { xs: "80%", sm: "90%", md: "100%" },
-  
 };
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   return (
     <Box sx={boxStyle}>
       <Container maxWidth="lg">
@@ -54,7 +55,14 @@ const HeroSection = () => {
               families in shaping the future of our little ones.
             </Typography>
             <Box display={"flex"} gap={"20px"}>
-              <Button variant="contained">Start Free Trial</Button>
+              <Button
+                variant="contained"
+                onClick={() => {
+                  navigate("/free-trial");
+                }}
+              >
+                Start Free Trial
+              </Button>
               <Button variant="outlined" color="inherit">
                 See pricing
               </Button>
