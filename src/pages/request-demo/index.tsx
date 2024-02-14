@@ -1,7 +1,13 @@
-import { Box } from "@mui/material";
+import DemoFAQ from "./demo-faq";
+import DemoForm from "./demo-form";
 
 const RequestDemo = () => {
-  return <Box pt={"90px"}>REQUEST DEMO</Box>;
+  return (
+    <>
+      <DemoForm />
+      <DemoFAQ />
+    </>
+  );
 };
 
 export default RequestDemo;

@@ -44,7 +44,7 @@ const HeroSection = () => {
           <Box sx={textStyle}>
             <Typography
               fontWeight={600}
-              fontSize={{ xs: 38, sm: 48, md: 58 }}
+              fontSize={{ xs: 32, sm: 48, md: 58 }}
               lineHeight={"60px"}
             >
               A Digital Haven for Collaborative Early Learning

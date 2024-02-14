@@ -45,6 +45,13 @@ declare global {
     nurseryName: string;
     subscriptionType: string;
   }
+  interface IDemoForm {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phoneNo: string;
+    role: string;
+  }
 }
 
 declare module "@mui/material/styles/createPalette" {

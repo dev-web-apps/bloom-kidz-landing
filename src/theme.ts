@@ -1,6 +1,33 @@
 import { createTheme } from "@mui/material";
 import { FiChevronDown } from "react-icons/fi";
 
+export function responsiveFontSizes({
+  xs,
+  sm,
+  md,
+  lg,
+}: {
+  xs: number;
+  sm: number;
+  md: number;
+  lg: number;
+}) {
+  return {
+    "@media (min-width:320px)": {
+      fontSize: `${xs}px`,
+    },
+    "@media (min-width:600px)": {
+      fontSize: `${sm}px`,
+    },
+    "@media (min-width:900px)": {
+      fontSize: `${md}px`,
+    },
+    "@media (min-width:1200px)": {
+      fontSize: `${lg}px`,
+    },
+  };
+}
+
 export const theme = createTheme({
   breakpoints: {
     values: {
@@ -321,8 +348,8 @@ export const theme = createTheme({
     },
     h2: {
       fontWeight: 700,
-      fontSize: "3rem",
       lineHeight: "130%",
+      ...responsiveFontSizes({ xs: 30, sm: 35, md: 40, lg: 48 }),
     },
     h3: {
       fontWeight: 700,

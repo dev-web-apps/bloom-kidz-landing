@@ -135,7 +135,7 @@ const KeyFeatures = ({ id }: { id: string }) => {
               <Typography sx={mainText}>{featureMock.Heading1}</Typography>
               <Typography sx={subText}>{featureMock.SubText1}</Typography>
               <Box>
-                <Button variant="contained">Request Demo</Button>
+                <Button variant="contained" onClick={()=> navigate('/request-demo')}>Request Demo</Button>
               </Box>
             </Box>
           </Box>

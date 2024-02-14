@@ -12,14 +12,14 @@ const Reviews = () => {
         justifyContent={"space-between"}
         mb={2}
       >
-        <Typography variant="h3" fontWeight={700}>
+        <Typography variant="h2" fontWeight={700}>
           Trusted by millions of <br /> nurseries & parents.
         </Typography>
         <Stack spacing={1}>
           <img
             src={TrustPilot}
             alt=""
-            style={{ width: "160px", height: "70px" }}
+            style={{ width: "160px", height: "auto" }}
           />
           <Typography fontSize={"15px"} textAlign={"end"}>
             4.5/5 (25 avis)

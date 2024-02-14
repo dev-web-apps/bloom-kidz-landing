@@ -121,6 +121,7 @@ export default function Header() {
                   py: "12px",
                   borderRadius: "6px",
                 }}
+                onClick={()=> navigate('/request-demo')}
               >
                 Request Demo
               </Button>
