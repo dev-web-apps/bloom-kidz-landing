@@ -10,7 +10,7 @@ const Reviews = () => {
         display={"flex"}
         alignItems={"center"}
         justifyContent={"space-between"}
-        mb={2}
+        mb={3}
       >
         <Typography variant="h2" fontWeight={700}>
           Trusted by millions of <br /> nurseries & parents.

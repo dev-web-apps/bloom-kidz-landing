@@ -56,7 +56,7 @@ declare global {
   interface IContactCard {
     icon: string; 
     heading: string;
-    phoneNumber: string;
+    subtext: string;
   }
 }
 

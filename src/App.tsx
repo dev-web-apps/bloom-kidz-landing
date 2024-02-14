@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      <ScrollToTop/>
+        <ScrollToTop />
         <Routes />
       </BrowserRouter>
     </>

@@ -3,7 +3,7 @@ import { Box, Typography } from '@mui/material'; // assuming you're using Materi
 
 
 
-const ContactCard: React.FC<IContactCard> = ({ icon, heading, phoneNumber }) => {
+const ContactCard: React.FC<IContactCard> = ({ icon, heading, subtext }) => {
   return (
     <Box
       p={{xs:2,sm:3,lg:4}}
@@ -20,7 +20,7 @@ const ContactCard: React.FC<IContactCard> = ({ icon, heading, phoneNumber }) => 
           {heading}
         </Typography>
         <Typography color={"#3E3E59CC"} fontSize={"16px"}>
-          {phoneNumber}
+          {subtext}
         </Typography>
       </Box>
     </Box>

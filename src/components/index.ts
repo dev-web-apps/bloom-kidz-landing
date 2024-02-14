@@ -29,5 +29,5 @@ export {
   ContactUsForm,
   ScrollToTop,
   GroupedSelect,
-  ContactCard
+  ContactCard,
 };
