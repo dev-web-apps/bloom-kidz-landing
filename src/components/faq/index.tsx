@@ -10,7 +10,7 @@ import {
 import { useState } from "react";
 import { Accordiondata } from "../../mocks/contact us";
 
-const FAQ = ({bgcolor}:{bgcolor:string}) => {
+const FAQ = ({ bgcolor }: { bgcolor: string }) => {
   const [expanded, setExpanded] = useState<number | null>(null);
 
   const handleChange = (index: number) => (
@@ -20,10 +20,15 @@ const FAQ = ({bgcolor}:{bgcolor:string}) => {
     setExpanded(isExpanded ? index : null);
   };
   return (
-    <Stack my={5} p={6} alignItems={"center"} justifyContent={"center"}>
+    <Stack
+      my={5}
+      p={{ xs: 2, sm: 4, md: 6 }}
+      alignItems={"center"}
+      justifyContent={"center"}
+    >
       <Typography
         fontWeight={600}
-        fontSize={"48px"}
+        variant="h2"
         lineHeight={"56px"}
         width={{ xs: "100%", sm: "500px" }}
         textAlign="center"
