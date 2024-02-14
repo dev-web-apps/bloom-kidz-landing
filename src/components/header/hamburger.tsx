@@ -110,7 +110,15 @@ const Hamburger = ({
             <Button variant="text" sx={{ color: "white", fontWeight: "500" }}>
               Login
             </Button>
-            <Button variant="outlined" color="inherit" sx={buttonStyle} onClick={()=> navigate('/request-demo')}>
+            <Button
+              variant="outlined"
+              color="inherit"
+              sx={buttonStyle}
+              onClick={() => {
+                navigate("/request-demo");
+                setIsDrawerOpen(false);
+              }}
+            >
               Request Demo
             </Button>
           </List>
