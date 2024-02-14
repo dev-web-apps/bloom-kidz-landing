@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Stack, SxProps, Typography } from "@mui/material";
 import Path from "../../assets/Path.png";
 import { Button } from "..";
+import { useNavigate } from "react-router-dom";
 
 const mainContainer = (dark: boolean): SxProps => ({
   p: { xs: 2, sm: 4 },
@@ -32,6 +33,7 @@ const PackageCard: React.FC<IPackageCard> = ({
   const getTextColor = (dark: boolean): string => {
     return dark ? "#FAFAFB" : "#0D0D0D";
   };
+  const navigate = useNavigate();
   return (
     <Box sx={mainContainer(dark as boolean)}>
       <Box sx={firstBox}>
@@ -82,7 +84,13 @@ const PackageCard: React.FC<IPackageCard> = ({
           </Stack>
         </Box>
         <Box alignSelf={"start"}>
-          <Button variant="contained" color="secondary">
+          <Button
+            variant="contained"
+            color="secondary"
+            onClick={() => {
+              navigate("/free-trial");
+            }}
+          >
             Start Free Trial
           </Button>
         </Box>

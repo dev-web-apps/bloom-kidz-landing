@@ -115,7 +115,14 @@ export default function Footer() {
                     </Typography>
                   </Box>
                   <Box display={"flex"} gap={"20px"}>
-                    <Button variant="contained">Start Free Trial</Button>
+                    <Button
+                      variant="contained"
+                      onClick={() => {
+                        navigate('/free-trial');
+                      }}
+                    >
+                      Start Free Trial
+                    </Button>
                     <Button variant="outlined" color="inherit">
                       See pricing
                     </Button>
