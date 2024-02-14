@@ -1,7 +1,13 @@
-import { Box } from "@mui/material";
+import Banner from "./banner";
+import TrialFAQ from "./faq";
 
 const FreeTrial = () => {
-  return <Box pt={"90px"}>FREE TRIAL</Box>;
+  return (
+    <>
+      <Banner />
+      <TrialFAQ />
+    </>
+  );
 };
 
 export default FreeTrial;
