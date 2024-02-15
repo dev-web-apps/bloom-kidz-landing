@@ -5,7 +5,7 @@ import { reviewData } from "../../../mocks/home";
 
 const Reviews = () => {
   return (
-    <Box px={1}>
+    <Box px={1} pb={4}>
       <Box
         display={"flex"}
         alignItems={"center"}
@@ -27,16 +27,29 @@ const Reviews = () => {
         </Stack>
       </Box>
       <Grid container spacing={2}>
-        {reviewData.map((review, index) => (
-          <Grid key={index} item xs={12} sm={6} md={4}>
-            <ReviewCard
-              name={review.name}
-              position={review.position}
-              text={review.text}
-              secondPara={review.secondPara}
-            />
-          </Grid>
-        ))}
+        {reviewData.map(
+          (review, index) =>
+            index % 2 === 0 && (
+              <Grid key={index} item xs={12} sm={6} md={4}>
+                <Stack>
+                  <ReviewCard
+                    name={review.name}
+                    position={review.position}
+                    text={review.text}
+                    secondPara={review.secondPara}
+                  />
+                  {reviewData[index + 1] && (
+                    <ReviewCard
+                      name={reviewData[index + 1].name}
+                      position={reviewData[index + 1].position}
+                      text={reviewData[index + 1].text}
+                      secondPara={reviewData[index + 1].secondPara}
+                    />
+                  )}
+                </Stack>
+              </Grid>
+            )
+        )}
       </Grid>
     </Box>
   );
