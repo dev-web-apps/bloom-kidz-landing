@@ -43,8 +43,13 @@ const FAQ = ({ bgcolor }: { bgcolor: string }) => {
             sx={{
               backgroundColor: bgcolor,
               borderBottom: expanded === index ? "0" : "2px solid #e5e0e0",
+              borderRadius: "0px",
               boxShadow: "none",
+              "&:before": {
+                display: "none",
+              },
             }}
+            square
             expanded={expanded === index}
             onChange={handleChange(index)}
           >
@@ -52,6 +57,9 @@ const FAQ = ({ bgcolor }: { bgcolor: string }) => {
               expandIcon={expanded === index ? <Remove /> : <Add />}
               aria-controls={`panel${index}-content`}
               id={`panel${index}-header`}
+              sx={{
+                borderBottom: expanded === index ? "2px solid #e5e0e0" : "0",
+              }}
             >
               <Typography fontWeight="600" fontSize="22px" lineHeight="34px">
                 {item.heading}
