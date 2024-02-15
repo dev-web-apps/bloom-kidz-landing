@@ -70,7 +70,7 @@ const Packages = () => {
               <Grid item xs={12} sm={12} md={4}>
                 <PackageCard
                   price={checked ? "£300" : "£25"}
-                  packageName="Childminders package"
+                  packageName="Childminders Package"
                   perks={["2-month Free Trial", "Up to 10 Children"]}
                   yearly={checked}
                 />
@@ -78,7 +78,7 @@ const Packages = () => {
               <Grid item xs={12} sm={12} md={4}>
                 <PackageCard
                   price={checked ? "£480" : "£45"}
-                  packageName="Nursery package"
+                  packageName="Nursery Package"
                   perks={["2-month Free Trial", "Up to 10 Children"]}
                   dark
                   yearly={checked}
@@ -87,7 +87,7 @@ const Packages = () => {
               <Grid item xs={12} sm={12} md={4}>
                 <PackageCard
                   price={checked ? "£1020" : "£85"}
-                  packageName="Nursery package"
+                  packageName="Nursery Package"
                   perks={["2-month Free Trial", "40 + Children"]}
                   yearly={checked}
                 />
