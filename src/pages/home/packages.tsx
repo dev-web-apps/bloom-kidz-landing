@@ -79,7 +79,7 @@ const Packages = () => {
                 <PackageCard
                   price={checked ? "£480" : "£45"}
                   packageName="Nursery Package"
-                  perks={["2-month Free Trial", "Up to 10 Children"]}
+                  perks={["2-month Free Trial", "Up to 39 Children"]}
                   dark
                   yearly={checked}
                 />
