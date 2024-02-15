@@ -11,12 +11,12 @@ const mainContainer = (dark: boolean): SxProps => ({
   backgroundColor: dark ? "#000" : "#FFFFFF",
 });
 
-const firstBox: SxProps = {
+const firstBox = (dark: boolean): SxProps => ({
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
-  minHeight: "350px",
-};
+  minHeight: dark ? "365px" : "350px",
+});
 const headerBox: SxProps = {
   display: "flex",
   flexDirection: "column",
@@ -36,7 +36,7 @@ const PackageCard: React.FC<IPackageCard> = ({
   const navigate = useNavigate();
   return (
     <Box sx={mainContainer(dark as boolean)}>
-      <Box sx={firstBox}>
+      <Box sx={firstBox(dark)}>
         <Box sx={headerBox}>
           <Box display={"flex"} justifyContent="space-between">
             <Box textAlign={"start"}>

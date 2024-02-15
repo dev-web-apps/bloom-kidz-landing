@@ -59,26 +59,26 @@ export const reviewData = [
   {
     name: "Gabe Oswald",
     position: "Lead Designers @Nike",
+    text: `“Excepteur sint occaecat 🙏 cupidat non proident sunt in culpam qui the officia the anim id and much more." proident sunt in culpam qui the officia the anim id and much more. `,
+    secondPara: `officia the anim id and much more."`,
+  },
+  {
+    name: "Gabe Oswald",
+    position: "Lead Designers @Nike",
     text: `Excepteur sint occaecat cupidat non proident sunt in culpam qui the officia the anim id and much more.`,
     secondPara: `Excepteur sint occaecat cupidat non proident sunt in culpam qui the officia the anim id and much more. ❤️`,
   },
   {
     name: "Gabe Oswald",
     position: "Lead Designers @Nike",
-    text: `“Excepteur sint occaecat 🙏 cupidat non proident sunt in culpam qui the officia the anim id and much more." proident sunt in culpam qui the officia the anim id and much more. `,
-    secondPara: `officia the anim id and much more."`,
-  },
-  {
-    name: "Gabe Oswald",
-    position: "Lead Designers @Nike",
-    text: `“Excepteur sint occaecat 🙏 cupidat non proident sunt in culpam qui the officia the anim id and much more." proident sunt in culpam qui the officia the anim id and much more. `,
-    secondPara: `officia the anim id and much more."`,
-  },
-  {
-    name: "Gabe Oswald",
-    position: "Lead Designers @Nike",
     text:
       "“Excepteur sint occaecat cupidat non proident sunt in culpam qui the officia the anim id and much more.”",
+  },
+  {
+    name: "Gabe Oswald",
+    position: "Lead Designers @Nike",
+    text: `“Excepteur sint occaecat 🙏 cupidat non proident sunt in culpam qui the officia the anim id and much more." proident sunt in culpam qui the officia the anim id and much more. `,
+    secondPara: `officia the anim id and much more."`,
   },
   {
     name: "Gabe Oswald",

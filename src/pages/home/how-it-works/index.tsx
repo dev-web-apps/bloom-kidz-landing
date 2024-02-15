@@ -13,6 +13,7 @@ const videoBox: SxProps = {
   borderRadius: "10px",
   overflow: "hidden",
   aspectRatio: "16:9",
+  cursor:'pointer'
 };
 const imgBox: SxProps = {
   position: "absolute",

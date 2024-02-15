@@ -131,7 +131,7 @@ export default function Header() {
                 variant="text"
                 sx={{ color: "white", fontWeight: 400 }}
                 onClick={() =>
-                  window.open(import.meta.env.VITE_DEVELOPMENT_FRONTEND_URL)
+                  (window.location.href = import.meta.env.VITE_DEVELOPMENT_FRONTEND_URL)
                 }
               >
                 Login
