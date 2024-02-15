@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Create Environment File
+        run: |
+          echo "VITE_DEVELOPMENT_FRONTEND_URL=https://bloomkidz.co.uk/" >> .env
       - name: npm install, build
         run: |
           npm cache clean --force
