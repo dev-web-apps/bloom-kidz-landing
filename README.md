@@ -17,6 +17,11 @@
 **18.16.1**
 
 
+## Deployed Url
+
+**bloomkidzlanding.web.app/**
+
+
 Clone the project
 
 ```bash
