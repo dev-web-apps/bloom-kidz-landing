@@ -47,7 +47,7 @@ const HeroSection = () => {
               fontSize={{ xs: 32, sm: 48, md: 58 }}
               lineHeight={"60px"}
             >
-              A Digital Haven for Collaborative Early Learning
+              A Digital Heaven for Collaborative Early Learning
             </Typography>
             <Typography fontSize={19} fontWeight={400}>
               Discover the power of togetherness in early learning with
