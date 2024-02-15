@@ -147,7 +147,7 @@ const ContactUsForm = ({
               />
             </Grid>
             <Grid item xs={12}>
-              <Button variant="contained">{button}</Button>
+              <Button variant="contained" sx={{width:'170px'}}>{button}</Button>
             </Grid>
           </Grid>
         </Grid>
