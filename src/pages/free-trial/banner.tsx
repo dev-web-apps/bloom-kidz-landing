@@ -154,9 +154,26 @@ const TrailForm = () => {
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <GroupedSelect
+                    displayEmpty
                     whiteLabel
                     label="Subscription Type"
                     value={form.subscriptionType}
+                    renderValue={(selected: string | unknown) => {
+                      if (selected) {
+                        return selected as string;
+                      }
+                      return (
+                        <p
+                          style={{
+                            color: "#68758899",
+                            fontWeight: "500",
+                            marginLeft: "7px",
+                          }}
+                        >
+                          Please Select
+                        </p>
+                      );
+                    }}
                     onChange={(event) =>
                       setForm({
                         ...form,
@@ -174,14 +191,23 @@ const TrailForm = () => {
                     >
                       MONTHLY
                     </ListSubheader>
-                    <MenuItem value={1} sx={{ fontWeight: "600" }}>
+                    <MenuItem
+                      value={"Childminders Package - £25/month"}
+                      sx={{ fontWeight: "600" }}
+                    >
                       Childminders Package - £25/month
                     </MenuItem>
-                    <MenuItem value={2} sx={{ fontWeight: "600" }}>
-                      Childminders Package - £25/month
-                    </MenuItem>
-                    <MenuItem value={3} sx={{ fontWeight: "600" }}>
+                    <MenuItem
+                      value={"Childminders Package - £45/month"}
+                      sx={{ fontWeight: "600" }}
+                    >
                       Nursery Package - £45/month
+                    </MenuItem>
+                    <MenuItem
+                      value={"Childminders Package - £45/month"}
+                      sx={{ fontWeight: "600" }}
+                    >
+                      Nursery Package - £85/month
                     </MenuItem>
                     <ListSubheader
                       sx={{
@@ -192,13 +218,22 @@ const TrailForm = () => {
                     >
                       YEARLY
                     </ListSubheader>
-                    <MenuItem value={4} sx={{ fontWeight: "600" }}>
+                    <MenuItem
+                      value={"Childminders Package - £250/year"}
+                      sx={{ fontWeight: "600" }}
+                    >
                       Childminders Package - £250/year
                     </MenuItem>
-                    <MenuItem value={5} sx={{ fontWeight: "600" }}>
+                    <MenuItem
+                      value={"Childminders Package - £450/year"}
+                      sx={{ fontWeight: "600" }}
+                    >
                       Nursery Package - £450/year
                     </MenuItem>
-                    <MenuItem value={6} sx={{ fontWeight: "600" }}>
+                    <MenuItem
+                      value={"Childminders Package - £850/year"}
+                      sx={{ fontWeight: "600" }}
+                    >
                       Nursery Package - £850/year
                     </MenuItem>
                   </GroupedSelect>

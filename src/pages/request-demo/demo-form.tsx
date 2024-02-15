@@ -11,7 +11,7 @@ import {
 import bgImage from "../../assets/packages-bg.png";
 import { Button, GroupedSelect, Socials, TextInput } from "../../components";
 import { useState } from "react";
-import { subscriptionTypeOptions } from "../../utils/constant";
+import { roleOptions } from "../../utils/constant";
 
 const wrapper: SxProps = {
   position: "relative",
@@ -142,9 +142,26 @@ const DemoForm = () => {
 
                 <Grid item xs={12}>
                   <GroupedSelect
+                    displayEmpty
                     whiteLabel
-                    label="Subscription Type"
+                    label="Please Select Your Role"
                     value={form.role}
+                    renderValue={(selected: string | unknown) => {
+                      if (selected) {
+                        return selected as string;
+                      }
+                      return (
+                        <p
+                          style={{
+                            color: "#68758899",
+                            fontWeight: "500",
+                            marginLeft: "7px",
+                          }}
+                        >
+                          Please Select
+                        </p>
+                      );
+                    }}
                     onChange={(event) =>
                       setForm({
                         ...form,
@@ -152,7 +169,7 @@ const DemoForm = () => {
                       })
                     }
                   >
-                    {subscriptionTypeOptions.map((option, index) => (
+                    {roleOptions.map((option, index) => (
                       <MenuItem
                         key={index}
                         value={option.value}
