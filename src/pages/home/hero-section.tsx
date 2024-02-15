@@ -3,6 +3,7 @@ import Banner from "../../assets/home-banner.png";
 import { common } from "@mui/material/colors";
 import { Button } from "../../components";
 import { useNavigate } from "react-router-dom";
+import { scrollToSection } from "../../utils/helpers";
 
 const boxStyle: SxProps = {
   height: { xs: "100%", md: "750px" },
@@ -63,8 +64,12 @@ const HeroSection = () => {
               >
                 Start Free Trial
               </Button>
-              <Button variant="outlined" color="inherit">
-                See pricing
+              <Button
+                variant="outlined"
+                color="inherit"
+                onClick={() => scrollToSection("pricing")}
+              >
+                See Pricing
               </Button>
             </Box>
           </Box>
