@@ -10,6 +10,7 @@ import {
 import CloseIcon from "@mui/icons-material/Close";
 import { textLinks } from "../../utils/constant";
 import { useNavigate } from "react-router";
+import { scrollToSection } from "../../utils/helpers";
 
 const closeBtn: SxProps = {
   color: "white",
@@ -40,12 +41,7 @@ const Hamburger = ({
   setIsDrawerOpen: (item: boolean) => void;
 }) => {
   const navigate = useNavigate();
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+
   return (
     <Drawer
       PaperProps={{
@@ -107,7 +103,13 @@ const Hamburger = ({
             ))}
           </List>
           <List sx={drawerButtonWrapper}>
-            <Button variant="text" sx={{ color: "white", fontWeight: "500" }}>
+            <Button
+              variant="text"
+              sx={{ color: "white", fontWeight: "500" }}
+              onClick={() =>
+                (window.location.href = import.meta.env.VITE_DEVELOPMENT_FRONTEND_URL)
+              }
+            >
               Login
             </Button>
             <Button

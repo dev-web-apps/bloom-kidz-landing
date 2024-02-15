@@ -72,7 +72,15 @@ export default function Footer() {
           <>
             <Grid container m={2} spacing={{ xs: 1, sm: 3, md: 6 }} mb={8}>
               <Grid item xs={12} sm={6} md={4} sx={firstGrid}>
-                <Box>
+                <Box
+                  onClick={() => {
+                    navigate("/");
+                    setTimeout(() => {
+                      window.scrollTo(0, 0);
+                    }, 100);
+                  }}
+                  sx={{ cursor: "pointer" }}
+                >
                   <img alt="logo" src={Logo} height={72} width={170} />
                 </Box>
                 <Typography sx={fontStyle} mr={2}>
@@ -96,6 +104,10 @@ export default function Footer() {
                               sx={buttonStyle}
                               key={text.title}
                               onClick={() => {
+                                if (text.title === "Log in") {
+                                  window.location.href = text.url;
+                                  return;
+                                }
                                 if (text.url) {
                                   navigate(text.url);
                                 } else if (text.id) {
@@ -135,8 +147,17 @@ export default function Footer() {
                     >
                       Start Free Trial
                     </Button>
-                    <Button variant="outlined" color="inherit">
-                      See pricing
+                    <Button
+                      variant="outlined"
+                      color="inherit"
+                      onClick={() => {
+                        navigate("/");
+                        setTimeout(() => {
+                          scrollToSection('pricing');
+                        }, 100);
+                      }}
+                    >
+                      See Pricing
                     </Button>
                   </Box>
                 </Stack>
