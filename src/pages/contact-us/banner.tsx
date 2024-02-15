@@ -47,7 +47,7 @@ const Banner = () => {
             >
               <ContactCard
                 icon={phoneIcon}
-                heading="Call us"
+                heading="Call Us"
                 subtext="(123) 431 3456"
               />
             </Box>
@@ -60,7 +60,7 @@ const Banner = () => {
             >
               <ContactCard
                 icon={emailIcon}
-                heading="Email us"
+                heading="Email Us"
                 subtext="hello@bloomkidz.com"
               />
             </Box>
