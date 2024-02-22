@@ -71,9 +71,8 @@ const FAQ = ({ bgcolor }: { bgcolor: string }) => {
                 fontSize="18px"
                 lineHeight="30px"
                 color="#3E3E59CC"
-              >
-                {item.subheading}
-              </Typography>
+                dangerouslySetInnerHTML={{ __html: item.subheading }}
+              />
             </AccordionDetails>
           </Accordion>
         ))}
