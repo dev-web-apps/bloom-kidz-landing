@@ -2,6 +2,8 @@ import { Box, Grid, Stack, SxProps, Typography } from "@mui/material";
 import { Button, Socials, TextInput } from "../../components";
 import { useState } from "react";
 import Prop from "../../assets/demo-prop.png";
+import { requestDemo } from "../../services/api.services";
+import { useAlert } from "react-alert";
 
 const mainContainer: SxProps = {
   borderRadius: "24px",
@@ -51,7 +53,24 @@ const ContactUsForm = ({
   button: string;
   bgColor?: string;
 }) => {
+  const alert = useAlert();
   const [form, setForm] = useState<IDemo>(initialState);
+  const [loading, setLoading] = useState<boolean>(false);
+
+  const handleSubmit = () => {
+    setLoading(true);
+    requestDemo({ ...form, type: "CONTACT_US" })
+      .then((response) => {
+        alert.success("Your Demo Request has been sent!");
+        console.log(response);
+        setLoading(false);
+        setForm(initialState);
+      })
+      .catch((error) => {
+        alert.error(error.response.data.message || "An Error Occured")
+        setLoading(false);
+      });
+  };
 
   return (
     <Box
@@ -67,7 +86,11 @@ const ContactUsForm = ({
             <Box sx={mainHeading}>
               <Box width={{ xs: "100%", lg: "500px" }} textAlign={"start"}>
                 <Typography variant="h2">{heading}</Typography>
-                <Typography variant="subtitle2" sx={subText} width={{ xs: "100%", lg: "270px" }}>
+                <Typography
+                  variant="subtitle2"
+                  sx={subText}
+                  width={{ xs: "100%", lg: "270px" }}
+                >
                   {text}
                 </Typography>
               </Box>
@@ -147,7 +170,14 @@ const ContactUsForm = ({
               />
             </Grid>
             <Grid item xs={12}>
-              <Button variant="contained" sx={{width:'170px'}}>{button}</Button>
+              <Button
+                variant="contained"
+                sx={{ width: "200px" }}
+                onClick={handleSubmit}
+                isLoading={loading}
+              >
+                {button}
+              </Button>
             </Grid>
           </Grid>
         </Grid>
