@@ -12,6 +12,8 @@ import bgImage from "../../assets/packages-bg.png";
 import { Button, GroupedSelect, Socials, TextInput } from "../../components";
 import { useState } from "react";
 import { roleOptions } from "../../utils/constant";
+import { requestDemo } from "../../services/api.services";
+import { useAlert } from "react-alert";
 
 const wrapper: SxProps = {
   position: "relative",
@@ -46,11 +48,29 @@ const initialState: IDemoForm = {
   lastName: "",
   email: "",
   phoneNo: "",
-  role: "",
+  designation: "",
 };
 
 const DemoForm = () => {
+  const alert = useAlert();
   const [form, setForm] = useState<IDemoForm>(initialState);
+
+  const [loading, setLoading] = useState<boolean>(false);
+
+  const handleSubmit = () => {
+    setLoading(true);
+    requestDemo({ ...form, type: "DEMO_REQUEST" })
+      .then((response) => {
+        alert.success("Your Demo Request has been sent!");
+        console.log(response);
+        setLoading(false);
+        setForm(initialState);
+      })
+      .catch((error) => {
+        alert.error(error.response.data.message || "An Error Occured");
+        setLoading(false);
+      });
+  };
   return (
     <Box sx={wrapper}>
       <Container maxWidth="lg">
@@ -145,7 +165,7 @@ const DemoForm = () => {
                     displayEmpty
                     whiteLabel
                     label="Please Select Your Role"
-                    value={form.role}
+                    value={form.designation}
                     renderValue={(selected: string | unknown) => {
                       if (selected) {
                         return selected as string;
@@ -165,7 +185,8 @@ const DemoForm = () => {
                     onChange={(event) =>
                       setForm({
                         ...form,
-                        role: (event as SelectChangeEvent<string>).target.value,
+                        designation: (event as SelectChangeEvent<string>).target
+                          .value,
                       })
                     }
                   >
@@ -181,7 +202,12 @@ const DemoForm = () => {
                   </GroupedSelect>
                 </Grid>
                 <Grid item xs={12} mt={2}>
-                  <Button variant="contained" sx={{ width: "170px" }}>
+                  <Button
+                    variant="contained"
+                    sx={{ width: "200px" }}
+                    isLoading={loading}
+                    onClick={handleSubmit}
+                  >
                     Book Demo
                   </Button>
                 </Grid>

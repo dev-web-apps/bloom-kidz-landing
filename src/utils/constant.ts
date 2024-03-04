@@ -29,13 +29,13 @@ export const footerRoutes = [
 ];
 
 export const roleOptions = [
-  { value: "Director/Owner", label: "Director/Owner" },
-  { value: "Manager", label: "Manager" },
-  { value: "Administrator", label: "Administrator" },
-  { value: "Practitioner", label: "Practitioner" },
-  { value: "Childminder", label: "Childminder" },
-  { value: "Parent", label: "Parent" },
-  { value: "Other", label: "Other" },
+  { value: "director/owner", label: "Director/Owner" },
+  { value: "manager", label: "Manager" },
+  { value: "administrator", label: "Administrator" },
+  { value: "practitioner", label: "Practitioner" },
+  { value: "childminder", label: "Childminder" },
+  { value: "parent", label: "Parent" },
+  { value: "other", label: "Other" },
 ];
 
 export const subscriptionTypes = [

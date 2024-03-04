@@ -50,7 +50,11 @@ declare global {
     lastName: string;
     email: string;
     phoneNo: string;
-    role: string;
+    designation?: string;
+  }
+  interface IRequestDemo extends IDemoForm{
+    message?:string;
+    type?: string;
   }
 
   interface IContactCard {
