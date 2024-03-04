@@ -14,6 +14,7 @@ jobs:
       - name: Create Environment File
         run: |
           echo "VITE_DEVELOPMENT_FRONTEND_URL=https://bloomkidz.co.uk/" >> .env
+          echo "VITE_DEVELOPMENT_BASE_URL=https://api.bloomkidz.co.uk/" >> .env
       - name: npm install, build
         run: |
           npm cache clean --force
