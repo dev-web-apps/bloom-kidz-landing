@@ -4,6 +4,7 @@ import { useState } from "react";
 import Prop from "../../assets/demo-prop.png";
 import { requestDemo } from "../../services/api.services";
 import { useAlert } from "react-alert";
+import { validateEmail } from "../../utils/helpers";
 
 const mainContainer: SxProps = {
   borderRadius: "24px",
@@ -58,6 +59,11 @@ const ContactUsForm = ({
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleSubmit = () => {
+    if (!validateEmail(form.email)) {
+      alert.error("Wrong email format");
+      setLoading(false);
+      return;
+    }
     setLoading(true);
     requestDemo({ ...form, type: "CONTACT_US" })
       .then((response) => {
@@ -67,7 +73,7 @@ const ContactUsForm = ({
         setForm(initialState);
       })
       .catch((error) => {
-        alert.error(error.response.data.message || "An Error Occured")
+        alert.error(error.response.data.message || "An Error Occured");
         setLoading(false);
       });
   };
@@ -175,6 +181,15 @@ const ContactUsForm = ({
                 sx={{ width: "200px" }}
                 onClick={handleSubmit}
                 isLoading={loading}
+                disabled={
+                  !(
+                    form.firstName &&
+                    form.lastName &&
+                    form.email &&
+                    form.phoneNo &&
+                    form.message
+                  )
+                }
               >
                 {button}
               </Button>

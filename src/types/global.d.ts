@@ -43,7 +43,7 @@ declare global {
     email: string;
     phoneNo: string;
     nurseryName: string;
-    subscriptionType: string;
+    packageId: string;
   }
   interface IDemoForm {
     firstName: string;
@@ -52,13 +52,26 @@ declare global {
     phoneNo: string;
     designation?: string;
   }
-  interface IRequestDemo extends IDemoForm{
-    message?:string;
+  interface IRequestDemo extends IDemoForm {
+    message?: string;
     type?: string;
   }
 
+
+  interface IBillingData {
+    billing: string;
+    createdAt: string;
+    description: string;
+    fee: number;
+    id: string;
+    isActive: boolean;
+    subTitle: string;
+    title: string;
+    updatedAt: string;
+  }
+
   interface IContactCard {
-    icon: string; 
+    icon: string;
     heading: string;
     subtext: string;
   }
