@@ -14,6 +14,7 @@ import { useState } from "react";
 import { roleOptions } from "../../utils/constant";
 import { requestDemo } from "../../services/api.services";
 import { useAlert } from "react-alert";
+import { validateEmail } from "../../utils/helpers";
 
 const wrapper: SxProps = {
   position: "relative",
@@ -58,6 +59,11 @@ const DemoForm = () => {
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleSubmit = () => {
+    if (!validateEmail(form.email)) {
+      alert.error("Wrong email format");
+      setLoading(false);
+      return;
+    }
     setLoading(true);
     requestDemo({ ...form, type: "DEMO_REQUEST" })
       .then((response) => {
@@ -207,6 +213,15 @@ const DemoForm = () => {
                     sx={{ width: "200px" }}
                     isLoading={loading}
                     onClick={handleSubmit}
+                    disabled={
+                      !(
+                        form.firstName &&
+                        form.lastName &&
+                        form.email &&
+                        form.phoneNo &&
+                        form.designation
+                      )
+                    }
                   >
                     Book Demo
                   </Button>
