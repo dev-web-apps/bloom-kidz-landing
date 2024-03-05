@@ -75,7 +75,6 @@ const TrailForm = () => {
         setForm(initialState);
       })
       .catch((error) => {
-        console.log(error);
         alert.error(error.response.data.error || "An Error Occured");
         setLoading(false);
       });
@@ -198,7 +197,6 @@ const TrailForm = () => {
                     label="Subscription Type"
                     value={form.packageId}
                     renderValue={(selected: string | unknown) => {
-                      console.log(selected);
                       if (selected) {
                         const selectedLabel =
                           packageList.find((item) => item.id === selected)
