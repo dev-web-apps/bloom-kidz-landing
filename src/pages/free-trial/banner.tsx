@@ -11,7 +11,10 @@ import {
 } from "@mui/material";
 import bgImage from "../../assets/packages-bg.png";
 import { Button, GroupedSelect, Socials, TextInput } from "../../components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getAllPackages, startFreeTrial } from "../../services/api.services";
+import { useAlert } from "react-alert";
+import { validateEmail } from "../../utils/helpers";
 
 const wrapper: SxProps = {
   position: "relative",
@@ -47,11 +50,47 @@ const initialState: ISignUp = {
   email: "",
   phoneNo: "",
   nurseryName: "",
-  subscriptionType: "",
+  packageId: "",
 };
 
 const TrailForm = () => {
+  const alert = useAlert();
   const [form, setForm] = useState<ISignUp>(initialState);
+  const [packageList, setPackageList] = useState<IBillingData[] | []>([]);
+
+  const [loading, setLoading] = useState<boolean>(false);
+
+  const handleSubmit = () => {
+    setLoading(true);
+    if (!validateEmail(form.email)) {
+      alert.error("Wrong email format");
+      setLoading(false);
+      return;
+    }
+    startFreeTrial(form)
+      .then((response) => {
+        alert.success("Free Trial Signed up successfully");
+        console.log(response);
+        setLoading(false);
+        setForm(initialState);
+      })
+      .catch((error) => {
+        console.log(error);
+        alert.error(error.response.data.error || "An Error Occured");
+        setLoading(false);
+      });
+  };
+
+  useEffect(() => {
+    getAllPackages()
+      .then((response) => {
+        setPackageList(response?.data?.data?.list);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   return (
     <Box sx={wrapper}>
       <Container maxWidth="lg">
@@ -157,10 +196,14 @@ const TrailForm = () => {
                     displayEmpty
                     whiteLabel
                     label="Subscription Type"
-                    value={form.subscriptionType}
+                    value={form.packageId}
                     renderValue={(selected: string | unknown) => {
+                      console.log(selected);
                       if (selected) {
-                        return selected as string;
+                        const selectedLabel =
+                          packageList.find((item) => item.id === selected)
+                            ?.title || "Please Select";
+                        return selectedLabel;
                       }
                       return (
                         <p
@@ -177,8 +220,8 @@ const TrailForm = () => {
                     onChange={(event) =>
                       setForm({
                         ...form,
-                        subscriptionType: (event as SelectChangeEvent<string>)
-                          .target.value,
+                        packageId: (event as SelectChangeEvent<string>).target
+                          .value,
                       })
                     }
                   >
@@ -189,26 +232,22 @@ const TrailForm = () => {
                         fontSize: "12px !important",
                       }}
                     >
-                      MONTHLY
+                      Monthly
                     </ListSubheader>
-                    <MenuItem
-                      value={"Childminders Package - £25/month"}
-                      sx={{ fontWeight: "600" }}
-                    >
-                      Childminders Package - £25/month
-                    </MenuItem>
-                    <MenuItem
-                      value={"Childminders Package - £45/month"}
-                      sx={{ fontWeight: "600" }}
-                    >
-                      Nursery Package - £45/month
-                    </MenuItem>
-                    <MenuItem
-                      value={"Childminders Package - £45/month"}
-                      sx={{ fontWeight: "600" }}
-                    >
-                      Nursery Package - £85/month
-                    </MenuItem>
+                    {packageList
+                      .filter(
+                        (packageItem) => packageItem.billing === "MONTHLY"
+                      )
+                      .map((item) => (
+                        <MenuItem
+                          key={item.id}
+                          value={item.id}
+                          sx={{ fontWeight: "600" }}
+                        >
+                          {item.title}
+                        </MenuItem>
+                      ))}
+
                     <ListSubheader
                       sx={{
                         backgroundColor: "#34A6B140",
@@ -216,30 +255,38 @@ const TrailForm = () => {
                         fontSize: "12px !important",
                       }}
                     >
-                      YEARLY
+                      Yearly
                     </ListSubheader>
-                    <MenuItem
-                      value={"Childminders Package - £250/year"}
-                      sx={{ fontWeight: "600" }}
-                    >
-                      Childminders Package - £250/year
-                    </MenuItem>
-                    <MenuItem
-                      value={"Childminders Package - £450/year"}
-                      sx={{ fontWeight: "600" }}
-                    >
-                      Nursery Package - £450/year
-                    </MenuItem>
-                    <MenuItem
-                      value={"Childminders Package - £850/year"}
-                      sx={{ fontWeight: "600" }}
-                    >
-                      Nursery Package - £850/year
-                    </MenuItem>
+                    {packageList
+                      .filter((packageItem) => packageItem.billing === "YEARLY")
+                      .map((item) => (
+                        <MenuItem
+                          key={item.id}
+                          value={item.id}
+                          sx={{ fontWeight: "600" }}
+                        >
+                          {item.title}
+                        </MenuItem>
+                      ))}
                   </GroupedSelect>
                 </Grid>
                 <Grid item xs={12} mt={2}>
-                  <Button variant="contained" sx={{ width: "170px" }}>
+                  <Button
+                    variant="contained"
+                    sx={{ width: "200px" }}
+                    isLoading={loading}
+                    onClick={handleSubmit}
+                    disabled={
+                      !(
+                        form.firstName &&
+                        form.lastName &&
+                        form.email &&
+                        form.phoneNo &&
+                        form.packageId &&
+                        form.nurseryName
+                      )
+                    }
+                  >
                     Sign Up
                   </Button>
                 </Grid>
