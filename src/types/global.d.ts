@@ -25,7 +25,7 @@ declare global {
   interface IPackageCard {
     price: string;
     packageName: string;
-    perks: string[];
+    perks: string;
     dark?: boolean;
     yearly?: boolean;
   }
