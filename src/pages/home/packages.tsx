@@ -103,14 +103,17 @@ const Packages = () => {
             <Grid container spacing={2}>
               {billingCycle === "YEARLY" &&
                 yearlyPackages.map((packageItem, index) => (
-                  <Grid item xs={12} sm={12} md={yearlyPackages.length === 2 ? 6 : 4}  key={packageItem.id}>
+                  <Grid
+                    item
+                    xs={12}
+                    sm={12}
+                    md={yearlyPackages.length === 2 ? 6 : 4}
+                    key={packageItem.id}
+                  >
                     <PackageCard
                       price={`£${packageItem.fee}`}
                       packageName={packageItem.title}
-                      perks={[
-                        `${packageItem.description}`,
-                        `${packageItem.subTitle}`,
-                      ]}
+                      perks={packageItem.description}
                       yearly={true}
                       dark={getCardDarkProp(index, yearlyPackages.length)}
                     />
@@ -118,14 +121,17 @@ const Packages = () => {
                 ))}
               {billingCycle === "MONTHLY" &&
                 monthlyPackages.map((packageItem, index) => (
-                  <Grid item xs={12} sm={12} md={monthlyPackages.length === 2 ? 6 : 4}  key={packageItem.id}>
+                  <Grid
+                    item
+                    xs={12}
+                    sm={12}
+                    md={monthlyPackages.length === 2 ? 6 : 4}
+                    key={packageItem.id}
+                  >
                     <PackageCard
-                      price={`£${(packageItem.fee)}`}
+                      price={`£${packageItem.fee}`}
                       packageName={packageItem.title}
-                      perks={[
-                        `${packageItem.description}`,
-                        `${packageItem.subTitle}`,
-                      ]}
+                      perks={packageItem.description}
                       yearly={false}
                       dark={getCardDarkProp(index, monthlyPackages.length)}
                     />
