@@ -69,7 +69,7 @@ const TrailForm = () => {
     }
     startFreeTrial(form)
       .then((response) => {
-        alert.success("Free Trial Signed up successfully");
+        alert.success("Free trial signed up successfully,our representative will get back to you soon");
         console.log(response);
         setLoading(false);
         setForm(initialState);

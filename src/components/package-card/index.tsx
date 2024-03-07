@@ -1,6 +1,5 @@
 import React from "react";
 import { Box, Stack, SxProps, Typography } from "@mui/material";
-import Path from "../../assets/Path.png";
 import { Button } from "..";
 import { useNavigate } from "react-router-dom";
 
@@ -62,25 +61,13 @@ const PackageCard: React.FC<IPackageCard> = ({
             </Typography>
           </Box>
           <Stack textAlign={"start"} spacing={1}>
-            {perks.map((perk, index) => (
-              <Box
-                key={index}
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "5px",
-                }}
-              >
-                <img src={Path} alt="" height={10} width={15} />
-                <Typography
-                  fontSize={"17px"}
-                  color={getTextColor(dark)}
-                  fontWeight={index === 0 ? 600 : 400}
-                >
-                  {perk}
-                </Typography>
-              </Box>
-            ))}
+            <Typography
+              fontSize={"17px"}
+              color={getTextColor(dark)}
+              fontWeight={600}
+            >
+              <div dangerouslySetInnerHTML={{ __html: perks }}></div>
+            </Typography>
           </Stack>
         </Box>
         <Box alignSelf={"start"}>

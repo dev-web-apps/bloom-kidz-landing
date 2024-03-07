@@ -67,7 +67,7 @@ const DemoForm = () => {
     setLoading(true);
     requestDemo({ ...form, type: "DEMO_REQUEST" })
       .then((response) => {
-        alert.success("Your Demo Request has been sent!");
+        alert.success("Your request for free demo has been sent, our representative will get back to you soon");
         console.log(response);
         setLoading(false);
         setForm(initialState);
