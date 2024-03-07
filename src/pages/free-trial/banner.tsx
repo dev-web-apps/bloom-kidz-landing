@@ -242,7 +242,7 @@ const TrailForm = () => {
                           value={item.id}
                           sx={{ fontWeight: "600" }}
                         >
-                          {item.title}
+                          {`${item.title} - £${item.fee}/month`}
                         </MenuItem>
                       ))}
 
@@ -263,7 +263,7 @@ const TrailForm = () => {
                           value={item.id}
                           sx={{ fontWeight: "600" }}
                         >
-                          {item.title}
+                          {`${item.title} - £${item.fee}/year`}
                         </MenuItem>
                       ))}
                   </GroupedSelect>
