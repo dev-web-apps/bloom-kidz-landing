@@ -109,7 +109,7 @@ const ContactUsForm = ({
             </Box>
           </Stack>
         </Grid>
-        <Grid item xs={12} sm={12} md={12} lg={6}>
+        <Grid item xs={12} sm={12} md={12} lg={6} pt={3}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextInput

@@ -67,7 +67,9 @@ const DemoForm = () => {
     setLoading(true);
     requestDemo({ ...form, type: "DEMO_REQUEST" })
       .then((response) => {
-        alert.success("Your request for free demo has been sent, our representative will get back to you soon");
+        alert.success(
+          "Your request for free demo has been sent, our representative will get back to you soon"
+        );
         console.log(response);
         setLoading(false);
         setForm(initialState);
@@ -115,7 +117,7 @@ const DemoForm = () => {
                 </Box>
               </Stack>
             </Grid>
-            <Grid item xs={12} sm={12} md={12} lg={6}>
+            <Grid item xs={12} sm={12} md={12} lg={6} pt={3}>
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                   <TextInput
