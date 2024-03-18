@@ -63,3 +63,28 @@ input::-webkit-inner-spin-button {
     height: 40px;
   }
 }
+
+/* Scroll bar */
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+  background: rgb(229, 228, 228);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #34a6b1;
+  /* border-radius: 5px; */
+  border-radius: 10px;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge add Firefox */
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  /* Firefox */
+}
