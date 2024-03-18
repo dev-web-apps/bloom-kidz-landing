@@ -1,5 +1,5 @@
 import { Box, Container, SxProps, Typography } from "@mui/material";
-import Banner from "../../assets/home-banner.png";
+import Banner from "../../assets/new-banner.png";
 import { common } from "@mui/material/colors";
 import { Button } from "../../components";
 import { useNavigate } from "react-router-dom";
