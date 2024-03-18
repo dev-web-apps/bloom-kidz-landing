@@ -1,10 +1,10 @@
 import { Box, Stack, Typography } from "@mui/material";
-import FB from "../../assets/Facebook.png";
-import Insta from "../../assets/Instagram.png";
-import Twitter from "../../assets/Twitter.png";
-import FBLight from "../../assets/Facebook-light.png";
-import InstaLight from "../../assets/Instagram-light.png";
-import TwitterLight from "../../assets/Twitter-light.png";
+import FB from "../../assets/FIcon.svg";
+import Insta from "../../assets/cameraIcon.svg";
+import Twitter from "../../assets/birdIcon.svg";
+import FBLight from "../../assets/greenF.svg";
+import InstaLight from "../../assets/green-camera.svg";
+import TwitterLight from "../../assets/green-bird.svg";
 
 const socialPlatforms = [
   {
@@ -41,16 +41,27 @@ const Socials = ({ light }: { light?: boolean }) => {
             display: "flex",
             alignItems: "center",
             gap: 2,
-            width:'50%'
+            width: { lg: "50%", xs: "100%" },
           }}
           onClick={() => window.open(platform.url)}
         >
-          <img
-            src={light ? platform.lightIcon : platform.icon}
-            alt={platform.name}
-            height={60}
-            width={60}
-          />
+          <Box
+            sx={{
+              height: "70px",
+              width: "70px",
+              borderRadius: "50%",
+              backgroundColor: light ? "#FFFFFF" : "#098EAD",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <img
+              src={light ? platform.lightIcon : platform.icon}
+              alt={platform.name}
+              style={{ maxWidth: "100%", maxHeight: "100%" }}
+            />
+          </Box>
           <Box>
             <Typography variant="h6" color={light ? "#FFFFFF" : "#000000"}>
               {platform.name}
