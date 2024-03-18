@@ -36,3 +36,15 @@ export function startFreeTrial(body: ISignUp): Promise<AxiosResponse> {
       });
   });
 }
+
+export function AddVisitor(body: IVisitor): Promise<AxiosResponse> {
+  return new Promise((resolve, reject) => {
+    http("/visitor/add", "post", body, null)
+      .then((res: AxiosResponse) => {
+        resolve(res);
+      })
+      .catch((err: AxiosError) => {
+        reject(err);
+      });
+  });
+}

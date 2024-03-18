@@ -45,6 +45,10 @@ declare global {
     nurseryName: string;
     packageId: string;
   }
+  interface IVisitor {
+    browser: string;
+    type: string;
+  }
   interface IDemoForm {
     firstName: string;
     lastName: string;
@@ -56,7 +60,6 @@ declare global {
     message?: string;
     type?: string;
   }
-
 
   interface IBillingData {
     billing: string;
